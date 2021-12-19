@@ -42,3 +42,24 @@ transform = pipe(trim, toLowerCase, wrap('div'))
 const toLowerCase = str => str.toLowerCase();
 
 const result = wrapInDiv(toLowerCase(trim(input)));
+
+
+
+
+// !=================== arrays ================
+const numbers = [1, 2 , 3]
+
+// adding
+const added = [...numbers, 4] // adding 4 to the end of the new array
+const added = [4, ...numbers] // adding 4 to the beginning of the array
+
+const index = numbers.indexOf(2) // finds the position of 2 in the array
+const added = [...numbers.slice(0, index)] // new array with the elements from 0 till the index above(not included 2)
+const added = [...numbers.slice(0, index) , 4 ,...numbers.slice(index)]//pushes 4 before 2 and then return the rest of numbers from 2 
+
+//!removing
+
+const removed = numbers.filter(n=> n !== 2);// returns new array dosne't include 2
+//! updating
+
+const updated = numbers.map(n => (n=== 2 ? 20 : n)) // updates 2 with 20
