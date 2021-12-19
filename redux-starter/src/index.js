@@ -29,8 +29,15 @@ transform = pipe(trim, toLowerCase, wrapInDiv)
 const trim = str => str.trim();
 const wrapInDiv = str => `<div>${str}</div>`;
 const wrapInSpan = str => `<span>${str}</span>`; //! the to code lines above looks simillar so we can do somthing about
-
+// ================================================
 const wrap = (type,str) => `<type>${str}</type>`
+//! with curring technic the above code line will become
+
+wrap = type => str => `<type>${str}</type>`
+
+transform = pipe(trim, toLowerCase, wrap('div'))
+// ================================================
+
 
 const toLowerCase = str => str.toLowerCase();
 
